@@ -2,9 +2,9 @@
 <div id="panel-experience" class="panel">
     <div class="section-header">COMPLETED QUESTS</div>
 
-    <x-portfolio.exp-card 
-        title="AI ENGINEER" 
-        company="ANAK App" 
+    <x-portfolio.exp-card
+        title="AI ENGINEER"
+        company="ANAK App"
         date="AUG 2024 – PRESENT"
         icon="⚔️"
     >
@@ -13,9 +13,9 @@
         <div class="exp-item">Integrated behavioral and performance data to enhance adaptive learning experience within the application.</div>
     </x-portfolio.exp-card>
 
-    <x-portfolio.exp-card 
-        title="ML ENGINEER" 
-        company="PELINDO – License Plate Detection" 
+    <x-portfolio.exp-card
+        title="ML ENGINEER"
+        company="PELINDO – License Plate Detection"
         date="SEP 2024 – DEC 2024"
         icon="🏗️"
     >
@@ -27,9 +27,9 @@
 
     <div class="section-header" style="margin-top:25px">SIDE QUESTS</div>
 
-    <x-portfolio.exp-card 
-        title="PERSONAL PROJECT" 
-        company="Hand Sign Language Recognition" 
+    <x-portfolio.exp-card
+        title="PERSONAL PROJECT"
+        company="Hand Sign Language Recognition"
         date="2025"
         icon="🤟"
     >

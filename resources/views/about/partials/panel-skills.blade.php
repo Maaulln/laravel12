@@ -10,7 +10,7 @@
     <x-portfolio.skill-bar name="MICROCONTROLLER" value="70" />
 
     <div class="section-header" style="margin-top:25px">ITEM INVENTORY</div>
-    
+
     <div class="badges-grid">
         <x-portfolio.badge icon="👁️" name="COMPUTER
 VISION" />

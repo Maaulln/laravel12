@@ -4,7 +4,7 @@
  */
 
 // ── Panel Configuration ──
-const panels = ['about', 'skills', 'experience', 'education', 'contact'];
+const panels = ["about", "skills", "experience", "education", "contact"];
 let currentIdx = 0;
 
 /**
@@ -14,34 +14,38 @@ let currentIdx = 0;
  */
 function switchPanel(name, btnEl = null) {
     // Hide all panels
-    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-    
+    document
+        .querySelectorAll(".panel")
+        .forEach((p) => p.classList.remove("active"));
+
     // Deactivate all menu buttons
-    document.querySelectorAll('.menu-btn').forEach(b => b.classList.remove('active'));
-    
+    document
+        .querySelectorAll(".menu-btn")
+        .forEach((b) => b.classList.remove("active"));
+
     // Show target panel
-    const targetPanel = document.getElementById('panel-' + name);
+    const targetPanel = document.getElementById("panel-" + name);
     if (targetPanel) {
-        targetPanel.classList.add('active');
+        targetPanel.classList.add("active");
     }
-    
+
     // Activate clicked button
     if (btnEl) {
-        btnEl.classList.add('active');
+        btnEl.classList.add("active");
     } else {
         // Find and activate the corresponding button
-        const buttons = document.querySelectorAll('.menu-btn');
+        const buttons = document.querySelectorAll(".menu-btn");
         const idx = panels.indexOf(name);
         if (idx >= 0 && buttons[idx]) {
-            buttons[idx].classList.add('active');
+            buttons[idx].classList.add("active");
         }
     }
-    
+
     // Update current index
     currentIdx = panels.indexOf(name);
-    
+
     // Animate skill bars when skills panel is shown
-    if (name === 'skills') {
+    if (name === "skills") {
         animateSkillBars();
     }
 }
@@ -51,7 +55,7 @@ function switchPanel(name, btnEl = null) {
  */
 function nextPanel() {
     currentIdx = (currentIdx + 1) % panels.length;
-    const btn = document.querySelectorAll('.menu-btn')[currentIdx];
+    const btn = document.querySelectorAll(".menu-btn")[currentIdx];
     switchPanel(panels[currentIdx], btn);
 }
 
@@ -60,7 +64,7 @@ function nextPanel() {
  */
 function prevPanel() {
     currentIdx = (currentIdx - 1 + panels.length) % panels.length;
-    const btn = document.querySelectorAll('.menu-btn')[currentIdx];
+    const btn = document.querySelectorAll(".menu-btn")[currentIdx];
     switchPanel(panels[currentIdx], btn);
 }
 
@@ -68,13 +72,13 @@ function prevPanel() {
  * Animate skill bars with a staggered fill effect
  */
 function animateSkillBars() {
-    document.querySelectorAll('.skill-bar-fill').forEach(bar => {
+    document.querySelectorAll(".skill-bar-fill").forEach((bar) => {
         const val = bar.dataset.value;
         // Reset width first for re-animation
-        bar.style.width = '0%';
+        bar.style.width = "0%";
         // Trigger animation after a short delay
         setTimeout(() => {
-            bar.style.width = val + '%';
+            bar.style.width = val + "%";
         }, 100);
     });
 }
@@ -84,13 +88,13 @@ function animateSkillBars() {
  */
 function updateClock() {
     const now = new Date();
-    const h = String(now.getHours()).padStart(2, '0');
-    const m = String(now.getMinutes()).padStart(2, '0');
-    const s = String(now.getSeconds()).padStart(2, '0');
-    
-    const clockEl = document.getElementById('clock');
+    const h = String(now.getHours()).padStart(2, "0");
+    const m = String(now.getMinutes()).padStart(2, "0");
+    const s = String(now.getSeconds()).padStart(2, "0");
+
+    const clockEl = document.getElementById("clock");
     if (clockEl) {
-        clockEl.textContent = h + ':' + m + ':' + s;
+        clockEl.textContent = h + ":" + m + ":" + s;
     }
 }
 
@@ -98,11 +102,11 @@ function updateClock() {
  * Initialize keyboard navigation
  */
 function initKeyboardNav() {
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight" || e.key === "ArrowDown") {
             nextPanel();
         }
-        if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
             prevPanel();
         }
     });
@@ -115,31 +119,31 @@ function initPortfolio() {
     // Start clock
     updateClock();
     setInterval(updateClock, 1000);
-    
+
     // Initialize keyboard navigation
     initKeyboardNav();
-    
+
     // Bind menu buttons
-    document.querySelectorAll('.menu-btn').forEach((btn, idx) => {
-        btn.addEventListener('click', function() {
+    document.querySelectorAll(".menu-btn").forEach((btn, idx) => {
+        btn.addEventListener("click", function () {
             switchPanel(panels[idx], this);
         });
     });
-    
+
     // Bind D-pad buttons
-    document.querySelectorAll('.dpad-btn').forEach(btn => {
+    document.querySelectorAll(".dpad-btn").forEach((btn) => {
         const text = btn.textContent.trim();
-        if (text === '▲' || text === '◀') {
-            btn.addEventListener('click', prevPanel);
-        } else if (text === '▼' || text === '▶') {
-            btn.addEventListener('click', nextPanel);
+        if (text === "▲" || text === "◀") {
+            btn.addEventListener("click", prevPanel);
+        } else if (text === "▼" || text === "▶") {
+            btn.addEventListener("click", nextPanel);
         }
     });
 }
 
 // Auto-initialize when DOM is ready
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initPortfolio);
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initPortfolio);
 } else {
     initPortfolio();
 }

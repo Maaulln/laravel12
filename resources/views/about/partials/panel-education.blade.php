@@ -2,9 +2,9 @@
 <div id="panel-education" class="panel">
     <div class="section-header">TRAINING GROUNDS</div>
 
-    <x-portfolio.exp-card 
-        title="DIPLOMA D3" 
-        company="Informatica Engineering" 
+    <x-portfolio.exp-card
+        title="DIPLOMA D3"
+        company="Informatica Engineering"
         date="2024 – NOW"
         icon="🎓"
     >

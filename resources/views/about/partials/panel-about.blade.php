@@ -1,7 +1,7 @@
 {{-- Panel: About / Profile --}}
 <div id="panel-about" class="panel active">
     <div class="section-header">PLAYER PROFILE</div>
-    
+
     <div class="summary-text">
         Informatics Engineering student with a strong interest in Artificial Intelligence,
         particularly in Computer Vision and intelligent system development. Experienced
