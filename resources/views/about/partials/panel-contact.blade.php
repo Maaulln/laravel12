@@ -30,4 +30,11 @@
             value="Malang, East Java<br>Indonesia"
         />
     </div>
+
+    {{-- Send Message Button --}}
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="{{ url('/contact') }}" class="btn-retro btn-submit" style="display: inline-block; text-decoration: none;">
+            <span class="btn-icon">📤</span> SEND MESSAGE
+        </a>
+    </div>
 </div>

@@ -1281,4 +1281,391 @@ body.portfolio-page::after {
     .nav-cards-grid {
         grid-template-columns: 1fr;
     }
+    .form-actions {
+        flex-direction: column;
+    }
+}
+
+/* ──────────── CONTACT FORM ──────────── */
+.contact-form-container {
+    margin-top: 15px;
+}
+
+.retro-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-label {
+    font-family: "Press Start 2P", monospace;
+    font-size: 10px;
+    color: var(--accent-amber);
+    letter-spacing: 1px;
+}
+
+.form-label .required {
+    color: var(--accent-red);
+}
+
+.form-input {
+    background: var(--brown-dark);
+    border: 2px solid var(--brown-warm);
+    color: var(--cream-mid);
+    font-family: "VT323", monospace;
+    font-size: 20px;
+    padding: 10px 14px;
+    border-radius: 4px;
+    outline: none;
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.form-input::placeholder {
+    color: var(--brown-warm);
+    opacity: 0.6;
+}
+
+.form-input:focus {
+    border-color: var(--accent-amber);
+    box-shadow: 0 0 8px rgba(232, 160, 32, 0.4);
+}
+
+.form-input.input-error {
+    border-color: var(--accent-red);
+    box-shadow: 0 0 8px rgba(192, 57, 43, 0.4);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.error-text {
+    font-family: "Press Start 2P", monospace;
+    font-size: 8px;
+    color: var(--accent-red);
+    letter-spacing: 0.5px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.btn-retro {
+    font-family: "Press Start 2P", monospace;
+    font-size: 10px;
+    padding: 12px 20px;
+    border: 3px solid var(--brown-warm);
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+    box-shadow: var(--pixel-shadow);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-retro:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--brown-dark);
+}
+
+.btn-submit {
+    background: var(--accent-green);
+    color: var(--cream-white);
+    border-color: #1b5e20;
+}
+
+.btn-submit:hover {
+    background: #388e3c;
+    box-shadow:
+        0 0 12px rgba(46, 125, 50, 0.5),
+        var(--pixel-shadow);
+}
+
+.btn-back {
+    background: var(--brown-mid);
+    color: var(--cream-mid);
+    border-color: var(--brown-warm);
+}
+
+.btn-back:hover {
+    background: var(--brown-warm);
+    color: var(--cream-white);
+}
+
+.btn-delete {
+    background: var(--accent-red);
+    color: var(--cream-white);
+    border-color: #922b21;
+}
+
+.btn-delete:hover {
+    background: #e74c3c;
+    box-shadow:
+        0 0 12px rgba(192, 57, 43, 0.5),
+        var(--pixel-shadow);
+}
+
+.btn-icon {
+    font-style: normal;
+}
+
+/* ──────────── ALERT MESSAGES ──────────── */
+.msg-alert {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-family: "Press Start 2P", monospace;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    border: 2px solid;
+}
+
+.msg-success {
+    background: rgba(46, 125, 50, 0.2);
+    border-color: var(--accent-green);
+    color: #81c784;
+}
+
+.msg-icon {
+    font-size: 16px;
+}
+
+/* ──────────── MESSAGES INBOX ──────────── */
+.messages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.message-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    background: var(--brown-dark);
+    border: 2px solid var(--brown-warm);
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--cream-mid);
+    transition: all 0.2s;
+}
+
+.message-item:hover {
+    border-color: var(--accent-amber);
+    box-shadow: 0 0 10px rgba(232, 160, 32, 0.3);
+    transform: translateX(4px);
+}
+
+.message-item.unread {
+    border-left: 4px solid var(--accent-amber);
+}
+
+.message-item.read {
+    opacity: 0.75;
+}
+
+.message-status {
+    flex-shrink: 0;
+    padding-top: 2px;
+}
+
+.status-dot {
+    font-size: 14px;
+}
+
+.unread-dot {
+    color: var(--accent-amber);
+    animation: pulse-dot 1.5s infinite;
+}
+
+.read-dot {
+    color: var(--brown-warm);
+}
+
+@keyframes pulse-dot {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
+.message-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.message-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.message-sender {
+    font-family: "Press Start 2P", monospace;
+    font-size: 10px;
+    color: var(--accent-amber);
+}
+
+.message-date {
+    font-size: 16px;
+    color: var(--brown-light);
+    white-space: nowrap;
+}
+
+.message-subject {
+    font-size: 18px;
+    color: var(--cream-light);
+    margin-top: 4px;
+}
+
+.message-preview {
+    font-size: 16px;
+    color: var(--brown-light);
+    margin-top: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ──────────── EMPTY INBOX ──────────── */
+.empty-inbox {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--brown-light);
+}
+
+.empty-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.empty-inbox p {
+    font-family: "Press Start 2P", monospace;
+    font-size: 11px;
+    margin-bottom: 8px;
+}
+
+.empty-sub {
+    font-family: "VT323", monospace !important;
+    font-size: 18px !important;
+    color: var(--brown-warm);
+}
+
+/* ──────────── MESSAGE DETAIL ──────────── */
+.message-detail-card {
+    background: var(--brown-dark);
+    border: 2px solid var(--brown-warm);
+    border-radius: 6px;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.detail-row {
+    display: flex;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(139, 94, 60, 0.3);
+    align-items: baseline;
+}
+
+.detail-label {
+    font-family: "Press Start 2P", monospace;
+    font-size: 9px;
+    color: var(--accent-amber);
+    min-width: 80px;
+    flex-shrink: 0;
+}
+
+.detail-value {
+    font-size: 18px;
+    color: var(--cream-light);
+    word-break: break-word;
+}
+
+.status-read {
+    color: var(--accent-green);
+}
+
+.detail-divider {
+    height: 2px;
+    background: var(--brown-warm);
+    margin: 16px 0;
+    opacity: 0.5;
+}
+
+.detail-body {
+    font-size: 20px;
+    color: var(--cream-mid);
+    line-height: 1.6;
+    white-space: pre-wrap;
+    word-break: break-word;
+    background: rgba(44, 26, 14, 0.5);
+    padding: 14px;
+    border-radius: 4px;
+    border: 1px solid rgba(139, 94, 60, 0.3);
+}
+
+/* ──────────── PAGINATION ──────────── */
+.retro-pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.retro-pagination nav {
+    display: flex;
+    justify-content: center;
+}
+
+.retro-pagination .relative {
+    display: flex;
+    gap: 4px;
+}
+
+.retro-pagination a,
+.retro-pagination span {
+    font-family: "Press Start 2P", monospace;
+    font-size: 9px;
+    padding: 8px 12px;
+    background: var(--brown-dark);
+    border: 2px solid var(--brown-warm);
+    color: var(--cream-mid);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.retro-pagination a:hover {
+    background: var(--brown-warm);
+    color: var(--cream-white);
+}
+
+.retro-pagination span[aria-current] {
+    background: var(--accent-amber);
+    border-color: var(--accent-amber);
+    color: var(--brown-dark);
 }

@@ -40,21 +40,21 @@
             <div class="nav-card-prompt">PRESS A TO CONTINUE &gt;</div>
         </a>
 
-        <a href="#" class="nav-card">
+        <a href="https://maulanachandrairawan.framer.website/#work" class="nav-card">
             <div class="nav-card-icon">⚔️</div>
             <div class="nav-card-title">PROJECTS</div>
             <div class="nav-card-desc">Explore my latest works & quests</div>
             <div class="nav-card-prompt">COMING SOON...</div>
         </a>
 
-        <a href="#" class="nav-card">
+        <a href="{{ url('/contact') }}" class="nav-card">
             <div class="nav-card-icon">📡</div>
             <div class="nav-card-title">CONTACT</div>
             <div class="nav-card-desc">Send a message to HQ</div>
             <div class="nav-card-prompt">PRESS B TO CONNECT &gt;</div>
         </a>
 
-        <a href="#" class="nav-card">
+        <a href="https://maulanachandrairawan.framer.website" class="nav-card">
             <div class="nav-card-icon">📚</div>
             <div class="nav-card-title">BLOG</div>
             <div class="nav-card-desc">Read my tech chronicles</div>
