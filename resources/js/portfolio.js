@@ -103,6 +103,9 @@ function updateClock() {
  */
 function initKeyboardNav() {
     document.addEventListener("keydown", (e) => {
+        // Suppress panel navigation when the snake game is active
+        if (window.snakeGameActive) return;
+
         if (e.key === "ArrowRight" || e.key === "ArrowDown") {
             nextPanel();
         }

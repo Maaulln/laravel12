@@ -1669,3 +1669,132 @@ body.portfolio-page::after {
     border-color: var(--accent-amber);
     color: var(--brown-dark);
 }
+
+/* ──────────── GAME PAGE ──────────── */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.game-info-bar {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    max-width: 420px;
+}
+
+.game-stat-box {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid var(--brown-warm);
+    padding: 10px 8px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-stat-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-amber), transparent);
+}
+
+.game-stat-label {
+    font-family: "Press Start 2P", monospace;
+    font-size: 7px;
+    color: var(--brown-light);
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+}
+
+.game-stat-value {
+    font-size: 30px;
+    color: var(--accent-amber);
+    text-shadow: 0 0 10px rgba(232, 160, 32, 0.5);
+}
+
+.game-canvas-wrapper {
+    position: relative;
+    border: 4px solid var(--brown-warm);
+    box-shadow:
+        0 0 30px rgba(232, 160, 32, 0.2),
+        inset 0 0 20px rgba(0, 0, 0, 0.5),
+        0 0 0 2px var(--brown-dark);
+}
+
+#snake-canvas {
+    display: block;
+    image-rendering: pixelated;
+}
+
+.game-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 8, 4, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.overlay-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.overlay-title {
+    font-family: "Press Start 2P", monospace;
+    font-size: 22px;
+    color: var(--accent-amber);
+    text-shadow:
+        0 0 20px rgba(232, 160, 32, 0.8),
+        3px 3px 0 var(--brown-dark);
+    margin-bottom: 20px;
+    animation: text-flicker 4s infinite;
+}
+
+.overlay-subtitle {
+    font-size: 20px;
+    color: var(--cream-mid);
+    animation: cursor-blink 1.5s steps(1) infinite;
+}
+
+.overlay-score {
+    margin-top: 14px;
+    font-size: 22px;
+    color: var(--accent-amber);
+}
+
+.game-controls-hint {
+    display: flex;
+    gap: 16px;
+    font-family: "Press Start 2P", monospace;
+    font-size: 7px;
+    color: var(--brown-light);
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 420px;
+}
+
+.game-controls-hint span {
+    border: 1px solid var(--brown-warm);
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+@media (max-width: 640px) {
+    .game-info-bar {
+        max-width: 320px;
+    }
+
+    #snake-canvas {
+        width: 320px;
+        height: 320px;
+    }
+}

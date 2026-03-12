@@ -54,11 +54,11 @@
             <div class="nav-card-prompt">PRESS B TO CONNECT &gt;</div>
         </a>
 
-        <a href="https://maulanachandrairawan.framer.website" class="nav-card">
-            <div class="nav-card-icon">📚</div>
-            <div class="nav-card-title">BLOG</div>
-            <div class="nav-card-desc">Read my tech chronicles</div>
-            <div class="nav-card-prompt">COMING SOON...</div>
+        <a href="{{ url('/game') }}" class="nav-card">
+            <div class="nav-card-icon">🐍</div>
+            <div class="nav-card-title">GAME</div>
+            <div class="nav-card-desc">Play Snake.EXE retro arcade</div>
+            <div class="nav-card-prompt">PRESS START &gt;</div>
         </a>
     </div>
 

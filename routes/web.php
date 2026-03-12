@@ -22,6 +22,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/game', function () {
+    return view('game');
+});
+
 // Contact / Send Message (public)
 Route::get('/contact', [MessageController::class, 'create'])->name('contact');
 Route::post('/contact', [MessageController::class, 'store'])->middleware('throttle:5,1')->name('contact.store');
